@@ -17,19 +17,19 @@
  specific language governing permissions and limitations
  under the License.
  -->		
-<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:tns='urn:riv:crm:selfservice:medicalsupply:GetMedicalSupplyPrescriptionsResponder:1' xmlns:core='urn:riv:crm:selfservice:medicalsupply:1' targetNamespace='urn:riv:crm:selfservice:medicalsupply:GetMedicalSupplyPrescriptionsResponder:1' elementFormDefault='qualified' attributeFormDefault='unqualified' version='1.0'>
-  <xs:import schemaLocation='../../core_components/crm_selfservice_medicalsupply_1.0.xsd' namespace='urn:riv:crm:selfservice:medicalsupply:1' />
-  <xs:element name='GetMedicalSupplyPrescriptions' type='tns:GetMedicalSupplyPrescriptionsType' />
-  <xs:element name='GetMedicalSupplyPrescriptionsResponse' type='tns:GetMedicalSupplyPrescriptionsResponseType' />
-  <xs:complexType name='GetMedicalSupplyPrescriptionsType'>
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:tns='urn:riv:crm:selfservice:medicalsupply:RegisterMedicalSupplyOrderResponder:2' xmlns:core='urn:riv:crm:selfservice:medicalsupply:2' targetNamespace='urn:riv:crm:selfservice:medicalsupply:RegisterMedicalSupplyOrderResponder:2' elementFormDefault='qualified' attributeFormDefault='unqualified' version='1.0'>
+  <xs:import schemaLocation='../../core_components/crm_selfservice_medicalsupply_2.0.xsd' namespace='urn:riv:crm:selfservice:medicalsupply:2' />
+  <xs:element name='RegisterMedicalSupplyOrder' type='tns:RegisterMedicalSupplyOrderType' />
+  <xs:element name='RegisterMedicalSupplyOrderResponse' type='tns:RegisterMedicalSupplyOrderResponseType' />
+  <xs:complexType name='RegisterMedicalSupplyOrderType'>
     <xs:sequence>
-      <xs:element name='SubjectOfCareId' type='xs:string' minOccurs='1' maxOccurs='1'/>
+      <xs:element name='Order' type='core:OrderType' minOccurs='1' maxOccurs='1'/>
       <xs:any namespace='##other' processContents='lax' minOccurs='0' maxOccurs='unbounded' />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name='GetMedicalSupplyPrescriptionsResponseType'>
+  <xs:complexType name='RegisterMedicalSupplyOrderResponseType'>
     <xs:sequence>
-	  <xs:element name='SubjectOfCareType' type='core:SubjectOfCareType' minOccurs='0' maxOccurs='1'/>
+	  <xs:element name='Order' type='core:OrderItemType' minOccurs='0' maxOccurs='unbounded'/>
       <xs:element name='ResultCode' type='core:ResultCodeEnum' />
       <xs:element name='comment' type='xs:string' minOccurs='0' />
       <xs:any namespace='##other' processContents='lax' minOccurs='0' maxOccurs='unbounded' />
